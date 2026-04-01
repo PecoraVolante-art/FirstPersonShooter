@@ -31,14 +31,13 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move= transform.right * x + transform.forward * z;
-        CC.Move(move * speed * Time.deltaTime);
-
+       
         if (Input.GetButtonDown("Jump") && GroundedPlayer)
         {
             Velocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
 
         Velocity.y += gravity * Time.deltaTime;
-        CC.Move(Velocity*Time.deltaTime);
+        CC.Move((move*speed + Velocity) * Time.deltaTime);
     }
 }
