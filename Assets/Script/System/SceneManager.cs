@@ -6,6 +6,7 @@ public class SceneLoader : MonoBehaviour
     //Creazione dei bottoni per caricare le scene
     public void Playbutton()// Carica scena livello 1 
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("FPS");
     }
 
